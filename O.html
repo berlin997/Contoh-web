@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganti Warna Karakter</title>
+    <style>
+        .highlight-zero {
+            color: yellow;
+        }
+        .highlight-dot {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">Ini adalah contoh 0 dan titik. 0 di sini dan 00000titik di sini.</p>
+
+    <script>
+        function changeColor() {
+            var textElement = document.getElementById('text');
+            var text = textElement.innerHTML;
+
+            // Ganti angka 0 dengan warna kuning
+            text = text.replace(/0/g, '<span class="highlight-zero">0</span>');
+            // Ganti titik dengan warna merah
+            text = text.replace(/\./g, '<span class="highlight-dot">.</span>');
+
+            // Update konten elemen dengan teks yang sudah diubah
+            textElement.innerHTML = text;
+        }
+
+        // Jalankan fungsi setelah halaman dimuat
+        window.onload = changeColor;
+    </script>
+</body>
+</html>
